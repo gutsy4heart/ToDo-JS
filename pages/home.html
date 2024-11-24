@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task Manager</h1>
+
+    <!-- Форма добавления задачи -->
+    <form id="add-task-form">
+      <div>
+        <label for="title">Task Title:</label>
+        <input type="text" id="title" name="title" required placeholder="Enter task title">
+      </div>
+      <div>
+        <label for="description">Task Description:</label>
+        <textarea id="description" name="description" required placeholder="Enter task description"></textarea>
+      </div>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Фильтрация и сортировка -->
+    <div id="controls">
+      <label for="filter">Filter:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="done">Done</option>
+        <option value="remaining">Remaining</option>
+      </select>
+
+      <label for="sort">Sort by:</label>
+      <select id="sort">
+        <option value="date">Date</option>
+        <option value="name">Name</option>
+      </select>
+    </div>
+
+    <!-- Список задач -->
+    <div id="task-list">
+      <!-- Задачи будут добавляться через JavaScript -->
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

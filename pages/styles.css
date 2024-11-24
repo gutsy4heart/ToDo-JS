@@ -1,31 +1,137 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
     line-height: 1.6;
-    box-sizing: border-box;
-}
-h1 {
-    text-align: center;
-}
-form {
-    margin-bottom: 20px;
-}
-input, textarea, select, button {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-}
-ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
-}
-li {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Контейнер для контента */
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Заголовки */
+  h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #222;
+  }
+  
+  /* Формы */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  /* Стили для кнопок */
+  a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Управляющие элементы */
+  #controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #controls label {
+    margin-right: 10px;
+  }
+  
+  /* Список задач */
+  #task-list {
+    margin-top: 20px;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    background: #f4f4f4;
-}
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+  .task-item.done {
+    background: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .task-item .task-title {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .task-item .task-title:hover {
+    text-decoration: underline;
+  }
+  
+  .task-item button {
+    margin-left: 10px;
+  }
+  
+  /* Стили 404 страницы */
+  p {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  
