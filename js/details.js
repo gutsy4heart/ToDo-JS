@@ -18,9 +18,14 @@ if (!task) {
 
 // Отображение деталей задачи
 const taskDetails = document.getElementById('task-details');
-taskDetails.innerHTML = `
-  <p><strong>Title:</strong> ${task.title}</p>
-  <p><strong>Description:</strong> ${task.description}</p>
-  <p><strong>Created At:</strong> ${new Date(task.createdAt).toLocaleString()}</p>
-  <p><strong>Status:</strong> ${task.isCompleted ? 'Done' : 'Remaining'}</p>
-`;
+
+if (taskDetails) {
+  taskDetails.innerHTML = `
+    <p><strong>Title:</strong> ${task.title}</p>
+    <p><strong>Description:</strong> ${task.description}</p>
+    <p><strong>Created At:</strong> ${new Date(task.createdAt).toLocaleString()}</p>
+    <p><strong>Status:</strong> ${task.isCompleted ? 'Done' : 'Remaining'}</p>
+  `;
+} else {
+  console.error('Element #task-details not found in DOM');
+}

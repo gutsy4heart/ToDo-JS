@@ -151,6 +151,14 @@ function displayTasks() {
 
     taskListContainer.appendChild(taskElement);
   });
+
+  // Добавляем обработчики для перехода на детали задачи
+  document.querySelectorAll('.task-title').forEach(titleElement => {
+    titleElement.addEventListener('click', e => {
+      const taskId = e.target.dataset.id; // Получаем ID задачи
+      window.location.href = `details.html?id=${taskId}`; // Переход на страницу деталей
+    });
+  });
 }
 
 // Добавление новой задачи
