@@ -141,7 +141,7 @@ function displayTasks() {
     taskElement.innerHTML = `
       <div>
         <input type="checkbox" ${task.isCompleted ? 'checked' : ''} data-id="${task.id}">
-        <span class="task-title" data-id="${task.id}">${task.title} ${task.createdAt}</span>
+        <span class="task-title" data-id="${task.id}">${task.title} </span>${task.createdAt}
       </div>
       <div>
         <button data-id="${task.id}" class="edit-btn">Edit</button>
@@ -151,8 +151,6 @@ function displayTasks() {
 
     taskListContainer.appendChild(taskElement);
   });
-
-  // Добавляем обработчики для перехода на детали задачи
   document.querySelectorAll('.task-title').forEach(titleElement => {
     titleElement.addEventListener('click', e => {
       const taskId = e.target.dataset.id; // Получаем ID задачи
