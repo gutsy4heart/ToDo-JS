@@ -141,7 +141,7 @@ function displayTasks() {
     taskElement.innerHTML = `
       <div>
         <input type="checkbox" ${task.isCompleted ? 'checked' : ''} data-id="${task.id}">
-        <span class="task-title" data-id="${task.id}">${task.title}</span>
+        <span class="task-title" data-id="${task.id}">${task.title} ${task.createdAt}</span>
       </div>
       <div>
         <button data-id="${task.id}" class="edit-btn">Edit</button>
