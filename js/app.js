@@ -49,7 +49,7 @@ class Task {
   }
 }
 
-class TaskList {
+export class TaskList {
   #tasks;
 
   constructor() {
