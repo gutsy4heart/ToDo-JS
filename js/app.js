@@ -1,3 +1,4 @@
+
 // Task Manager
 
 class Task {
@@ -54,7 +55,7 @@ export class TaskList {
 
   constructor() {
     this.#tasks = JSON.parse(localStorage.getItem('tasks'))?.map(
-      task => new Task(task.id, task.title, task.description, task.createdAt, task.isCompleted)
+        task => new Task(task.id, task.title, task.description, task.createdAt, task.isCompleted)
     ) || [];
   }
 
@@ -123,13 +124,13 @@ function displayTasks() {
   const filter = filterSelect.value;
   const sort = sortSelect.value;
   const tasks = taskList
-    .sortTasks(sort)
-    .filter(
-      task =>
-        filter === 'all' ||
-        (filter === 'done' && task.isCompleted) ||
-        (filter === 'remaining' && !task.isCompleted)
-    );
+      .sortTasks(sort)
+      .filter(
+          task =>
+              filter === 'all' ||
+              (filter === 'done' && task.isCompleted) ||
+              (filter === 'remaining' && !task.isCompleted)
+      );
 
   taskListContainer.innerHTML = '';
 
@@ -159,32 +160,40 @@ function displayTasks() {
   });
 }
 
-// Добавление новой задачи
-addTaskForm.addEventListener('submit', e => {
-  e.preventDefault();
 
-  const title = addTaskForm.title.value.trim();
-  const description = addTaskForm.description.value.trim();
 
-  // Валидация данных
-  const titleRegex = /^(?!\d+$)[a-zA-Zа-яА-ЯёЁ0-9\s]{1,16}( [a-zA-Zа-яА-ЯёЁ0-9\s]{1,16})+$/;
-  const descriptionRegex = /^.+$/;
 
-  if (!titleRegex.test(title) || !descriptionRegex.test(description) || title === description) {
-    alert('Invalid input. Please check the fields.');
+document.addEventListener('DOMContentLoaded', () => {
+  if (!addTaskForm) {
+    console.error('add-task-form элемент не найден!');
     return;
   }
+  addTaskForm.addEventListener('submit', e => {
+    e.preventDefault();
 
-  const newTask = new Task(
-    Date.now().toString(),
-    title,
-    description,
-    new Date().toISOString()
-  );
+    const title = addTaskForm.title.value.trim();
+    const description = addTaskForm.description.value.trim();
 
-  taskList.addTask(newTask);
-  addTaskForm.reset();
-  displayTasks();
+    // Валидация данных
+    const titleRegex = /^(?!\d+$)[a-zA-Zа-яА-ЯёЁ0-9\s]{1,16}( [a-zA-Zа-яА-ЯёЁ0-9\s]{1,16})+$/;
+    const descriptionRegex = /^.+$/;
+
+    if (!titleRegex.test(title) || !descriptionRegex.test(description) || title === description) {
+      alert('Invalid input. Please check the fields.');
+      return;
+    }
+
+    const newTask = new Task(
+        Date.now().toString(),
+        title,
+        description,
+        new Date().toISOString()
+    );
+
+    taskList.addTask(newTask);
+    addTaskForm.reset();
+    displayTasks();
+  });
 });
 
 // Удаление задачи
@@ -203,7 +212,6 @@ taskListContainer.addEventListener('click', e => {
     window.location.href = `edit.html?id=${id}`;
   }
 });
-
 
 // Смена статуса задачи
 taskListContainer.addEventListener('change', e => {

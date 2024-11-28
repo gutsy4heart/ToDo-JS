@@ -2,7 +2,6 @@ import {TaskList}  from "./app.js";
 
 const taskList = new TaskList();
 const editTask = document.getElementById("edit-task-form");
-const cancelBtn = document.getElementById('cancel-btn');
 
 const urlParams = new URLSearchParams(window.location.search);
 const taskId = urlParams.get('id');
@@ -14,7 +13,7 @@ if(!taskId) {
 const task = taskList.getTaskById(taskId);
 if (!task) {
     alert('Task not found!');
-    window.location.href = 'index.html';
+    window.location.href = '../pages/home.html';
 }
 
 editTask.title.value = task.title;
@@ -34,10 +33,7 @@ editTask.addEventListener("submit", e => {
 
     taskList.updateTask(task);
 
-    window.location.href = './index.html';
+    window.location.href = '../pages/home.html';
 
-});
-cancelBtn.addEventListener('click', () => {
-    window.location.href = 'index.html';
 });
 
