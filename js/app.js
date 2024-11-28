@@ -204,6 +204,7 @@ taskListContainer.addEventListener('click', e => {
   }
 });
 
+
 // Смена статуса задачи
 taskListContainer.addEventListener('change', e => {
   if (e.target.type === 'checkbox') {
