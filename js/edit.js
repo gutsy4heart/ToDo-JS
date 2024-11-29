@@ -1,4 +1,4 @@
-import {TaskList}  from "./app.js";
+import {TaskList} from "./taskList.js";
 
 const taskList = new TaskList();
 const editTask = document.getElementById("edit-task-form");
@@ -21,19 +21,19 @@ editTask.description.value = task.description;
 
 editTask.addEventListener("submit", e => {
     e.preventDefault();
-    const updatedTitle = editTask.title.trim();
-    const updatedDescription = editTask.description.trim();
+    const updatedTitle = editTask.title.trim;
+    const updatedDescription = editTask.description.trim;
 
-    if(!updatedTitle || !updatedDescription) {
-        alert('Fields cannot be empty.');
-    }
-
+    // if(!updatedTitle || !updatedDescription) {
+    //     alert('Fields cannot be empty.');
+    // }
+    //
     task.title = updatedTitle;
     task.description = updatedDescription;
 
     taskList.updateTask(task);
 
-    // window.location.href = '../pages/home.html';
+
     alert("Fields is updated!");
 });
 
