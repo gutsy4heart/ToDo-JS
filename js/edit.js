@@ -33,7 +33,7 @@ editTask.addEventListener("submit", e => {
 
     taskList.updateTask(task);
 
-    window.location.href = '../pages/home.html';
-
+    // window.location.href = '../pages/home.html';
+    alert("Fields is updated!");
 });
 
