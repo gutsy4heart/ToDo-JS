@@ -57,6 +57,7 @@ export class TaskList {
             description: task.description,
             createdAt: task.createdAt,
             isCompleted: task.isCompleted,
+
         }));
         localStorage.setItem('tasks', JSON.stringify(serializedTasks));
     }

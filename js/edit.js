@@ -21,15 +21,16 @@ editTask.description.value = task.description;
 
 editTask.addEventListener("submit", e => {
     e.preventDefault();
-    const updatedTitle = editTask.title.trim;
-    const updatedDescription = editTask.description.trim;
+    const updatedTitle = editTask.title.value.trim();
+    const updatedDescription = editTask.description.value.trim();
 
-    // if(!updatedTitle || !updatedDescription) {
-    //     alert('Fields cannot be empty.');
-    // }
-    //
+    if(!updatedTitle || !updatedDescription) {
+        alert('Fields cannot be empty.');
+    }
+
     task.title = updatedTitle;
     task.description = updatedDescription;
+    task.updatedAt = new Date().toISOString();
 
     taskList.updateTask(task);
 

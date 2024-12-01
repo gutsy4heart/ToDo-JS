@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Invalid input. Please check the fields.');
       return;
     }
+    alert('Task successfully added!');
 
     const newTask = new Task(
         Date.now().toString(),
