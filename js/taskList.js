@@ -11,11 +11,13 @@ export class TaskList {
 
     addTask(task) {
         this.#tasks.push(task);
+        alert('Task added successfully!');
         this.saveTasks();
     }
 
     deleteTask(id) {
         this.#tasks = this.#tasks.filter(task => task.id !== id);
+        alert('Task deleted successfully!');
         this.saveTasks();
     }
 
@@ -29,15 +31,6 @@ export class TaskList {
 
     getTaskById(id) {
         return this.#tasks.find(task => task.id === id);
-    }
-
-    filterTasks(filter) {
-        if (filter === 'done') {
-            return this.#tasks.filter(task => task.isCompleted);
-        } else if (filter === 'remaining') {
-            return this.#tasks.filter(task => !task.isCompleted);
-        }
-        return this.#tasks;
     }
 
     sortTasks(criteria) {

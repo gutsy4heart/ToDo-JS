@@ -14,7 +14,7 @@ export class Task {
         this.#updatedAt = null;
     }
 
-    // Геттеры и сеттеры для управления приватными полями
+
     get id() {
         return this.#id;
     }

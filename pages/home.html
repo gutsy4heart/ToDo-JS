@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Manager - Home</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="module" defer src="../js/app.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Task Manager</h1>
 
-    <!-- Форма добавления задачи -->
     <form id="add-task-form">
       <div>
         <label for="title">Task Title:</label>
@@ -23,7 +23,6 @@
       <button type="submit">Add Task</button>
     </form>
 
-    <!-- Фильтрация и сортировка -->
     <div id="controls">
       <label for="filter">Filter:</label>
       <select id="filter">
@@ -39,12 +38,10 @@
       </select>
     </div>
 
-    <!-- Список задач -->
+
     <div id="task-list">
-      <!-- Задачи будут добавляться через JavaScript -->
+      <!-- in JS file -->
     </div>
   </div>
-
-  <script type="module" src="../js/app.js"></script>
 </body>
 </html>

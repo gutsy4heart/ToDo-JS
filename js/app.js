@@ -7,7 +7,6 @@ const addTaskForm = document.getElementById('add-task-form');
 const filterSelect = document.getElementById('filter');
 const sortSelect = document.getElementById('sort');
 
-// Функция для отображения задач
 function displayTasks() {
   const filter = filterSelect.value;
   const sort = sortSelect.value;
@@ -48,9 +47,6 @@ function displayTasks() {
   });
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   if (!addTaskForm) {
     console.error('add-task-form элемент не найден!');
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = addTaskForm.title.value.trim();
     const description = addTaskForm.description.value.trim();
 
-    // Валидация данных
     const titleRegex = /^(?!\d+$)[a-zA-Zа-яА-ЯёЁ0-9\s]{1,16}( [a-zA-Zа-яА-ЯёЁ0-9\s]{1,16})+$/;
     const descriptionRegex = /^.+$/;
 
@@ -70,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Invalid input. Please check the fields.');
       return;
     }
-    alert('Task successfully added!');
 
     const newTask = new Task(
         Date.now().toString(),
@@ -85,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Удаление задачи
 taskListContainer.addEventListener('click', e => {
   if (e.target.classList.contains('delete-btn')) {
     const id = e.target.dataset.id;
@@ -94,7 +87,6 @@ taskListContainer.addEventListener('click', e => {
   }
 });
 
-// Редактирование задачи
 taskListContainer.addEventListener('click', e => {
   if (e.target.classList.contains('edit-btn')) {
     const id = e.target.dataset.id;
@@ -102,7 +94,6 @@ taskListContainer.addEventListener('click', e => {
   }
 });
 
-// Смена статуса задачи
 taskListContainer.addEventListener('change', e => {
   if (e.target.type === 'checkbox') {
     const id = e.target.dataset.id;
@@ -115,9 +106,8 @@ taskListContainer.addEventListener('change', e => {
   }
 });
 
-// Фильтрация и сортировка
 filterSelect.addEventListener('change', displayTasks);
 sortSelect.addEventListener('change', displayTasks);
 
-// Отображение задач при загрузке
+
 displayTasks();
